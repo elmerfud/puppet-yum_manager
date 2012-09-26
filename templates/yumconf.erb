@@ -1,0 +1,26 @@
+# Managed by Puppet
+[main]
+cachedir=<%= cachedir %>
+keepcache=<%= keepcache %>
+debuglevel=<%= debuglevel %>
+logfile=<%= logfile %>
+distroverpkg=<%= distroverpkg %>
+tolerant=<%= tolerant %>
+exactarch=<%= exactarch %>
+obsoletes=<%= obsoletes %>
+gpgcheck=<%= gpgcheck %>
+plugins=<%= plugins %>
+
+# Note: yum-RHN-plugin doesn't honor this.
+metadata_expire=<%= metadata_expire %>
+
+<% unless proxy == :undef %>
+proxy = http://<%= proxy %>
+<% end %>
+<% unless proxy_username == :undef %>
+proxy_username = <%= proxy_username %>
+<% end %>
+<% unless proxy_password == :undef %>
+proxy_password = <%= proxy_password %>
+<% end %>
+
